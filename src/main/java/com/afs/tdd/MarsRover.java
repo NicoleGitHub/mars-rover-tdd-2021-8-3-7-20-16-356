@@ -60,6 +60,9 @@ public class MarsRover {
         return String.format("%d %d %s", coordinates.fst, coordinates.snd, direction);
     }
 
-    public void executeCommands(String command) {
+    public void executeCommands(String commands) {
+        for(int i = 0; i < commands.length(); i++) {
+            executeCommand(commands.charAt(i));
+        }
     }
 }
