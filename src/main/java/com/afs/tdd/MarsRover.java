@@ -20,13 +20,16 @@ public class MarsRover {
     private void move() {
         switch (direction) {
             case 'N':
-                coordinates = new Pair<Integer, Integer>(coordinates.fst, coordinates.snd + 1);
+                coordinates = new Pair<>(coordinates.fst, coordinates.snd + 1);
                 break;
             case 'S':
-                coordinates = new Pair<Integer, Integer>(coordinates.fst, coordinates.snd - 1);
+                coordinates = new Pair<>(coordinates.fst, coordinates.snd - 1);
                 break;
             case 'E':
-                coordinates = new Pair<Integer, Integer>(coordinates.fst + 1, coordinates.snd);
+                coordinates = new Pair<>(coordinates.fst + 1, coordinates.snd);
+                break;
+            case 'W':
+                coordinates = new Pair<>(coordinates.fst - 1, coordinates.snd);
                 break;
         }
 

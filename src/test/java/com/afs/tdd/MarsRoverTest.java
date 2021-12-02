@@ -52,4 +52,19 @@ public class MarsRoverTest {
 
     }
 
+    @Test
+    void should_locationX_add_one_space_when_execute_command_given_direction_W_and_command_M() {
+        //given
+        MarsRover marsRover = new MarsRover(new Pair<Integer, Integer>(0, 0), 'W');
+        char command = 'M';
+
+        //when
+        marsRover.executeCommand(command);
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("-1 0 W", result);
+
+    }
+
 }
