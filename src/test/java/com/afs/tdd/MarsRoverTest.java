@@ -129,4 +129,70 @@ public class MarsRoverTest {
 
     }
 
+
+
+
+
+
+
+    @Test
+    void should_E_add_one_space_when_execute_command_given_direction_N_and_command_R() {
+        //given
+        MarsRover marsRover = new MarsRover(new Pair<Integer, Integer>(0, 0), NORTH);
+        char command = RIGHT;
+
+        //when
+        marsRover.executeCommand(command);
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("0 0 E", result);
+
+    }
+
+    @Test
+    void should_W_add_one_space_when_execute_command_given_direction_S_and_command_R() {
+        //given
+        MarsRover marsRover = new MarsRover(new Pair<Integer, Integer>(0, 0), SOUTH);
+        char command = RIGHT;
+
+        //when
+        marsRover.executeCommand(command);
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("0 0 W", result);
+
+    }
+
+    @Test
+    void should_S_add_one_space_when_execute_command_given_direction_E_and_command_R() {
+        //given
+        MarsRover marsRover = new MarsRover(new Pair<Integer, Integer>(0, 0), EAST);
+        char command = RIGHT;
+
+        //when
+        marsRover.executeCommand(command);
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("0 0 S", result);
+
+    }
+
+    @Test
+    void should_N_add_one_space_when_execute_command_given_direction_W_and_command_R() {
+        //given
+        MarsRover marsRover = new MarsRover(new Pair<Integer, Integer>(0, 0), WEST);
+        char command = RIGHT;
+
+        //when
+        marsRover.executeCommand(command);
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("0 0 N", result);
+
+    }
+
 }
