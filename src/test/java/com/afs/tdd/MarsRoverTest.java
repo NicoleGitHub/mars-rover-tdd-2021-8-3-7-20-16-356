@@ -10,7 +10,7 @@ public class MarsRoverTest {
 
 
     @Test
-    void should_locationY_add_one_space_when_execute_command_given_direction_N_and_command_M() {
+    void should_return_locationY_add_one_space_when_execute_command_given_direction_N_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), NORTH);
         char command = MOVE;
@@ -25,7 +25,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_locationY_add_one_space_when_execute_command_given_direction_S_and_command_M() {
+    void should_return_locationY_add_one_space_when_execute_command_given_direction_S_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), SOUTH);
         char command = MOVE;
@@ -40,7 +40,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_locationX_add_one_space_when_execute_command_given_direction_E_and_command_M() {
+    void should_return_locationX_add_one_space_when_execute_command_given_direction_E_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), EAST);
         char command = MOVE;
@@ -55,7 +55,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_locationX_add_one_space_when_execute_command_given_direction_W_and_command_M() {
+    void should_return_locationX_add_one_space_when_execute_command_given_direction_W_and_command_M() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), WEST);
         char command = MOVE;
@@ -70,7 +70,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_W_add_one_space_when_execute_command_given_direction_N_and_command_L() {
+    void should_return_W_add_one_space_when_execute_command_given_direction_N_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), NORTH);
         char command = LEFT;
@@ -85,7 +85,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_E_add_one_space_when_execute_command_given_direction_S_and_command_L() {
+    void should_return_E_add_one_space_when_execute_command_given_direction_S_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), SOUTH);
         char command = LEFT;
@@ -100,7 +100,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_N_add_one_space_when_execute_command_given_direction_E_and_command_L() {
+    void should_return_N_add_one_space_when_execute_command_given_direction_E_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), EAST);
         char command = LEFT;
@@ -115,7 +115,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_S_add_one_space_when_execute_command_given_direction_W_and_command_L() {
+    void should_return_S_add_one_space_when_execute_command_given_direction_W_and_command_L() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), WEST);
         char command = LEFT;
@@ -130,7 +130,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_E_add_one_space_when_execute_command_given_direction_N_and_command_R() {
+    void should_return_E_add_one_space_when_execute_command_given_direction_N_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), NORTH);
         char command = RIGHT;
@@ -145,7 +145,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_W_add_one_space_when_execute_command_given_direction_S_and_command_R() {
+    void should_return_W_add_one_space_when_execute_command_given_direction_S_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), SOUTH);
         char command = RIGHT;
@@ -160,7 +160,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_S_add_one_space_when_execute_command_given_direction_E_and_command_R() {
+    void should_return_S_add_one_space_when_execute_command_given_direction_E_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), EAST);
         char command = RIGHT;
@@ -175,7 +175,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    void should_N_add_one_space_when_execute_command_given_direction_W_and_command_R() {
+    void should_return_N_add_one_space_when_execute_command_given_direction_W_and_command_R() {
         //given
         MarsRover marsRover = new MarsRover(new Pair<>(0, 0), WEST);
         char command = RIGHT;
@@ -186,6 +186,21 @@ public class MarsRoverTest {
 
         //return
         assertEquals("0 0 N", result);
+
+    }
+
+    @Test
+    void should_return_XXX_add_one_space_when_execute_command_given_direction_N_and_commands() {
+        //given
+        MarsRover marsRover = new MarsRover(new Pair<>(0, 0), NORTH);
+        String command = "MLMR";
+
+        //when
+        marsRover.executeCommands(command);
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("-1 1 N", result);
 
     }
 

@@ -2,9 +2,6 @@ package com.afs.tdd;
 
 import com.sun.tools.javac.util.Pair;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 import static com.afs.tdd.Constants.*;
 
 public class MarsRover {
@@ -63,4 +60,6 @@ public class MarsRover {
         return String.format("%d %d %s", coordinates.fst, coordinates.snd, direction);
     }
 
+    public void executeCommands(String command) {
+    }
 }
