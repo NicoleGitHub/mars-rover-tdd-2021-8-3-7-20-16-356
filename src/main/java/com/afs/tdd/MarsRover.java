@@ -1,6 +1,7 @@
 package com.afs.tdd;
 
 import com.sun.tools.javac.util.Pair;
+import static com.afs.tdd.Constants.*;
 
 public class MarsRover {
     private Pair<Integer, Integer> coordinates;
@@ -15,6 +16,9 @@ public class MarsRover {
         if(command == 'M') {
             move();
         }
+        else {
+            turn(command);
+        }
     }
 
     private void move() {
@@ -28,11 +32,43 @@ public class MarsRover {
             case 'E':
                 coordinates = new Pair<>(coordinates.fst + 1, coordinates.snd);
                 break;
-            case 'W':
+            default :
                 coordinates = new Pair<>(coordinates.fst - 1, coordinates.snd);
-                break;
         }
+    }
 
+    private void turn(char command) {
+        switch (command) {
+            case 'L':
+                switch (direction) {
+                    case 'N':
+                        direction = WEST;
+                        break;
+                    case 'S':
+                        direction = EAST;
+                        break;
+                    case 'E':
+                        direction = NORTH;
+                        break;
+                    default:
+                        direction = SOUTH;
+                }
+                break;
+            default:
+                switch (direction) {
+                    case 'N':
+                        direction = EAST;
+                        break;
+                    case 'S':
+                        direction = WEST;
+                        break;
+                    case 'E':
+                        direction = SOUTH;
+                        break;
+                    default:
+                        direction = NORTH;
+                }
+        }
     }
 
     public String getStatus() {
