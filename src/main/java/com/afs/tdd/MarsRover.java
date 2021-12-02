@@ -1,6 +1,10 @@
 package com.afs.tdd;
 
 import com.sun.tools.javac.util.Pair;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static com.afs.tdd.Constants.*;
 
 public class MarsRover {
@@ -13,7 +17,7 @@ public class MarsRover {
     }
 
     public void executeCommand(char command) {
-        if(command == 'M') {
+        if(command == MOVE) {
             move();
         }
         else {
@@ -38,37 +42,21 @@ public class MarsRover {
     }
 
     private void turn(char command) {
-        switch (command) {
-            case 'L':
-                switch (direction) {
-                    case 'N':
-                        direction = WEST;
-                        break;
-                    case 'S':
-                        direction = EAST;
-                        break;
-                    case 'E':
-                        direction = NORTH;
-                        break;
-                    default:
-                        direction = SOUTH;
-                }
-                break;
-            default:
-                switch (direction) {
-                    case 'N':
-                        direction = EAST;
-                        break;
-                    case 'S':
-                        direction = WEST;
-                        break;
-                    case 'E':
-                        direction = SOUTH;
-                        break;
-                    default:
-                        direction = NORTH;
-                }
-        }
+
+            switch (direction) {
+                case 'N':
+                    direction = (command==LEFT) ? WEST : EAST;
+                    break;
+                case 'S':
+                    direction = (command==LEFT) ? EAST : WEST;
+                    break;
+                case 'E':
+                    direction = (command==LEFT) ? NORTH : SOUTH;
+                    break;
+                default:
+                    direction = (command==LEFT) ? SOUTH : NORTH;
+            }
+
     }
 
     public String getStatus() {
